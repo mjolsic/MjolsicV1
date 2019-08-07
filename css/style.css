@@ -58,7 +58,7 @@ li, ul, ol{
 
 .clearfix{
   padding:0;
-  height:300px;
+
   margin-right: 16px;
   white-space: nowrap;
   overflow-x:auto;
@@ -120,6 +120,7 @@ li, ul, ol{
 .mdl-card{
   border-radius: 8px;
   min-height: 150px;
+  overflow: visible;
 }
 
 .white{
@@ -134,7 +135,7 @@ li, ul, ol{
 }
 
 .container-song-details{
-  width: 50%;
+  width: 70%;
   color:white;
   padding: 6px 0px 6px 6px;
 }
@@ -163,6 +164,15 @@ li, ul, ol{
 }
 
 .container-split{
-  display: contents;
+  display: inline-block;
   width:80%;
+}
+.container-split-top{
+  height:5px;
+  width:100%;
+  background: linear-gradient(90deg, #33E2FF 50%, grey 50%)
+}
+
+.container-split-bottom{
+  display:flex;
 }
