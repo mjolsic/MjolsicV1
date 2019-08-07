@@ -58,7 +58,6 @@ li, ul, ol{
 
 .clearfix{
   padding:0;
-
   margin-right: 16px;
   white-space: nowrap;
   overflow-x:auto;
@@ -69,25 +68,12 @@ li, ul, ol{
   display: inline-flex;
 }
 
-
 .clearfix::-webkit-scrollbar {
   width: 0 !important
 }
 
-.songPicLoading{
-  display: block;
-  position:relative;
-  padding-top: 140%;
-  background-size: cover;
-  cursor:pointer;
-  box-shadow: 0 2px 5px rgba(0,0,0,.7);
-}
-
 .text-overflow{
-  overflow:hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  width: 100%;
+
 }
 
 .musicPlayerContainer{
@@ -105,12 +91,27 @@ li, ul, ol{
 .demo-card-image.mdl-card {
   width: 150px;
   height: 150px;
-  background: url('../image/Chinese/A-Lin-有一种悲伤.jpg') center / cover;
+  background: center / cover;
 }
+
+.demo-card-image > .mdl-card__title{
+  justify-content: center;
+}
+
+.mdl-card__title > .mdl-button{
+  height:70px;
+  width:70px;
+}
+
+.mdl-card__title > .mdl-button > i{
+  font-size: 50px;
+}
+
 .mdl-card__actions {
   height: 52px;
   padding: 16px;
 }
+
 .demo-card-image__filename {
   color: white;
   font-size: 14px;
@@ -121,6 +122,14 @@ li, ul, ol{
   border-radius: 8px;
   min-height: 150px;
   overflow: visible;
+}
+
+.title-name{
+  overflow:hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width:150px;
+  font-size: 15px;
 }
 
 .white{
