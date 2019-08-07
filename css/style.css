@@ -134,11 +134,9 @@ li, ul, ol{
 }
 
 .container-song-details{
-  height:100%;
   width: 50%;
-  padding-left: 10px;
   color:white;
-  margin: 6px 0px;
+  padding: 6px 0px 6px 6px;
 }
 
 
