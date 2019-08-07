@@ -36,12 +36,39 @@
                      id="waterfall-exp">
             </div>
           </div>
+
+          <div class="right-corner-menu">
+            <button id="rC-menu"
+          class="mdl-button mdl-js-button mdl-button--icon">
+            <i class="material-icons">more_vert</i>
+          </button>
+
+          <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+              for="rC-menu">
+            <li class="mdl-menu__item">Some Action</li>
+            <li class="mdl-menu__item">Another Action</li>
+            <li disabled class="mdl-menu__item">Disabled Action</li>
+            <li class="mdl-menu__item">Yet Another Action</li>
+          </ul>
+          </div>
         </div>
       </header>
 
       <div class="mdl-layout__drawer">
         <span class="mdl-layout-title">Mj&ouml;lsic</span>
         <nav class="mdl-navigation">
+          <div class="mdl-navigation__link">
+            <i class="material-icons">
+              home
+            </i>
+            Home
+          </div>
+          <div class="mdl-navigation__link">
+            <i class="material-icons">
+              library_music
+            </i>
+            Playlist
+          </div>
           <div class="mdl-navigation__link">
             <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="dMSwitch">
               <input type="checkbox" id="dMSwitch" class="mdl-switch__input">
@@ -99,12 +126,34 @@
         </div>
       </main>
 
-      <div class="musicPlayerContainer1">
-
-      </div>
       <div class="musicPlayerContainer">
+        <div class="container-song-picture"></div>
+        <div class="container-split">
+          <div class="container-song-details">
+            <div class="container-song-title">
+              有一种悲伤
+            </div>
+            <div class="container-song-author">
+              A-Lin
+            </div>
+          </div>
+          <div class="container-function-buttons">
+            <div class="container-buttons">
+              <button class="mdl-button mdl-js-button mdl-js-ripple-effect container-button">
+                <i class="material-icons">play_arrow</i>
+              </button>
+            </div>
+            <div class="container-buttons">
+              <button class="mdl-button mdl-js-button  mdl-js-ripple-effect container-button">
+                <i class="material-icons">skip_next</i>
+              </button>
+            </div>
+          </div>
+        </div>
 
       </div>
+    </div>
+
 
       <script src="js/index.js"></script>
   </body>
