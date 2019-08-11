@@ -1,4 +1,9 @@
-
+body{
+  -webkit-user-select: none; /* Safari 3.1+ */
+  -moz-user-select: none; /* Firefox 2+ */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none; /* Standard syntax */
+}
 
 li, ul, ol{
   list-style: none;
@@ -86,6 +91,7 @@ li, ul, ol{
   -ms-flex-pack: justify;
   color: #9e9e9e;
   background-color: #33B0FF;
+  display: none;
 }
 
 .demo-card-image.mdl-card {
@@ -184,4 +190,107 @@ li, ul, ol{
 
 .container-split-bottom{
   display:flex;
+}
+
+.mdl-layout__header{
+  z-index: 6;
+}
+
+.multi-fx-btn{
+  position:fixed;
+  right: 25px;
+  bottom: 15px;
+  z-index: 2;
+}
+
+.queueTable{
+  display: block;
+  position: fixed;
+  background-color: white;
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.4);
+}
+
+#queueList{
+  top: 56px;
+  left: 0;
+  margin-right: 0;
+  bottom: 110px;
+  margin-bottom: 0;
+  width: 100%;
+  height:calc(100% - 140px);
+  background-color: white;
+  border-radius: 3px;
+  z-index: 1!important;
+  transition: width 0.3s ease;
+  transform-origin: right bottom;
+}
+
+#queueList::after{
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  box-sizing: border-box;
+  right: 48px;
+  border: 8px solid white;
+  z-index: -1;
+  transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  box-shadow: -12px 12px 15px 0px rgba(0,0,0,.24);
+  bottom: -15px;
+}
+
+.transform-in{
+  transition: all 0.3s ease;
+  transform: rotate(-90deg);
+}
+
+.transform-out{
+  transition: all 0.3s ease;
+}
+
+.active{
+  animation: scale-display .3s;
+}
+
+.out{
+  animation: scale-display--reversed .3s;
+	animation-fill-mode:forwards;
+}
+
+@keyframes scale-display {
+	0% {
+		opacity: 0;
+		transform: scale(0);
+    -webkit-transform: scale(0);
+	}
+
+	100% {
+		opacity: 1;
+		transform: scale(1);
+    -webkit-transform: scale(1);
+	}
+}
+
+@keyframes scale-display--reversed {
+	0% {
+		display: inline-flex;
+		opacity: 1;
+		transform: scale(1);
+		-webkit-transform: scale(1);
+	}
+	99% {
+		display: inline-flex;
+		opacity: 0;
+		transform: scale(0);
+		-webkit-transform: scale(0);
+	}
+	100% {
+		display: none;
+		opacity: 0;
+		transform: scale(0);
+		-webkit-transform: scale(0);
+	}
 }

@@ -382,6 +382,10 @@ function initialise(){
   document.addEventListener('touchstart', handleTouchStart, false);
   document.addEventListener('touchmove', handleTouchMove, false);
 
+  // Special jquery to trigger css
+  $('#queueList').hide();
+  //$('.mdl-layout__drawer-button').addClass('transform');
+
   //Custom Array functions
 
   //NAI = name and index
@@ -418,7 +422,7 @@ function initialise(){
   //All the details in the whole collection
   var songNameInSongs = []; var authorNameInSongs = []; var driveUrlInSongs = []; var allVAI; var duplicates;
   var nonDuplicates; var copiedArray = []; var songTitles; var authorDataValue; var titleDataValue;
-  var dupCollection = [];
+  var dupCollection = [];var multi_btn_s = false;var nav_clicked = false;
 
   var row = document.querySelector('.row');
   var rowOutput = "";
@@ -491,12 +495,36 @@ function initialise(){
 
   //Event listener functions
   function seeIfClicked(event){
-    //If condition for checkboxes on table being clicked
-    if (event.target.matches('.container-song-author') ||event.target.matches('.container-song-title')){
-      console.log(event.target)
+    //var panelState = document.querySelector('.mdl-layout__drawer-button');
+    if (nav_clicked === false){
+      //If condition for checkboxes on table being clicked
+      if (event.target.matches('.container-song-author') ||event.target.matches('.container-song-title')){
+        //console.log(event.target)
+      }
+      //if condition to change nav bar icon
+      else if (event.target.matches('.mdl-layout__drawer-button i') || event.target.matches('.mdl-layout__drawer-button')){
+        nav_clicked = true;
+        $('.mdl-layout__drawer-button i').removeClass('transform-out').addClass('transform-in');
+  			$('.mdl-layout__drawer-button')[0].childNodes[0].innerText = 'close';
+      }
+      else if (event.target.matches('#multi-fx-btn span')){
+        if (multi_btn_s === false){
+          multi_btn_s = true;
+          $('#queueList').show();
+          $('#queueList').removeClass('out').addClass('active');
+        }
+        else {
+          multi_btn_s = false;
+          $('#queueList').removeClass('active').addClass('out');
+        }
+        //console.log(event.target)
+      }
     }
-      //console.log(event.target)
-
+    else if (nav_clicked === true){
+      nav_clicked = false;
+      $('.mdl-layout__drawer-button i').removeClass('transform-in').addClass('transform-out');
+      $('.mdl-layout__drawer-button')[0].childNodes[0].innerText = 'dehaze';
+    }
   }
 
   function getTouches(evt) {
